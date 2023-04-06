@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/common.css" />
+</head>
+<body>
+    <div class="wrap login_wrap">
+        <div class="content">
+            <div class="logo"></div>
+            <div class="login_box">
+                <div class="login_form">
+                    <div class="login_title">登录</div>
+                    <form action="{% url 'login' %}" method="post"> {% csrf_token %}
+                        <div class="form_text_ipt">
+                            <input type="text" name="username" placeholder="用户名">
+                        </div>
+                        <div class="ececk_warning"><span>Not NULL</span></div>
+                        <div class="form_text_ipt">
+                            <input type="text" name="password" placeholder="密码">
+                        </div>
+                        <div class="ececk_warning"><span>Not NULL</span></div>
+                        <div class="form_check_ipt">
+                            <div class="left check_left">
+                                <label><input type="checkbox" name=""> 下次自动登录</label>
+                            </div>
+                            <div class="right check_right">
+                                <a href="#">忘记密码</a>
+                            </div>
+                        </div>
+                        <div class="form_btn">
+                            <button type="submit">登录</button>
+                        </div>
+                        <div class="form_reg_btn">
+                            <span>还没有账号？</span><a href="{% url 'register' %}">马上注册</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <style>
+            .copyrights {
+                text-indent: -9999px;
+                height: 0;
+                line-height: 0;
+                font-size: 0;
+                overflow: hidden;
+            }
+        </style>
+    </div>
+</body>
+</html>
