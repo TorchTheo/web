@@ -1,50 +1,37 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title> 注册 </title>
-		<link rel="stylesheet" href="/static/css/reset.css" />
-		<link rel="stylesheet" href="/static/css/common.css" />
-	</head>
-
-	<body>
-		<div class="wrap login_wrap">
-			<div class="content">
-
-				<div class="logo"></div>
-
-				<div class="login_box">
-
-					<div class="login_form">
-						<div class="login_title">
-							注册
-						</div>
-						<form action="{% url 'register'%}" method="post"> {% csrf_token %}
-
-							<div class="form_text_ipt">
-								<input name="username" type="text" placeholder="用户名">
-							</div>
-							<div class="ececk_warning"><span>数据不能为空</span></div>
-							<div class="form_text_ipt">
-								<div>密码</div><input name="password" type="password" placeholder="密码">
-							</div>
-							<div class="ececk_warning"><span>数据不能为空</span></div>
-							<div class="form_text_ipt">
-								<div>重复密码</div><input name="repassword" type="password" placeholder="重复密码">
-							</div>
-							<div class="ececk_warning"><span>数据不能为空</span></div>
-							<div class="form_btn">
-								<button type="submit">注册</button>
-							</div>
-							<div class="form_reg_btn">
-								<span>已有帐号？</span><a href="{% url 'login' %}">马上登录</a>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript" src="/static/js/jquery.min.js" ></script>
-		<script type="text/javascript" src="/static/js/common.js" ></script>
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <script src="../static/js/jquery-3.6.4.min.js"></script>
+    <script src="../static/js/script_register.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <div class="register_form">
+        <div class="register_title">注册</div>
+        <form class="register" action="{% url 'register' %}" method="post"> {% csrf_token %}
+            <div class="form_text_ipt">
+                <div><input class="username" type="text" name="username" placeholder="用户名"><span class="hint">用户名需由4-20个数字和字母组成</span></div>
+                <div class="error_info_username error_check"><img src="../static/images/x.png" alt="" class="error_image"><span class="error_username">用户名不能为空</span></div>
+            </div>
+            <div class="form_text_ipt">
+                <div><input class="password" type="password" name="password" placeholder="密码"><span class="hint">密码需由8-16个数字和字母组成</span></div>
+                <div class="error_info_password error_check"><img src="../static/images/x.png" alt="" class="error_image"><span class="error_password">密码不能为空</span></div>
+            </div>
+			<div class="form_text_ipt">
+                <div><input class="repassword" type="password" name="repassword" placeholder="重复密码"><span class="hint">请再次输入密码</span></div>
+                <div class="error_info_repassword error_check"><img src="../static/images/x.png" alt="" class="error_image"><span class="error_repassword">两次密码不相同</span></div>
+            </div>
+            <div class="form_btn">
+                <button type="submit">注册</button>
+            </div>
+            <div class="form_reg_btn">
+                <span>已有账号？</span><a href="{% url 'login' %}">立刻登录</a>
+            </div>
+        </form>
+    </div>
+</body>
 </html>

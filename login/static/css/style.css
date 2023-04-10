@@ -4,13 +4,41 @@ body {
     font-size: 12px;
 }
 
+a {
+    color: dodgerblue;
+}
+
 .error_check {
     display: none;
     color: red;
     font-size: 10px;
 }
 
+.hint {
+    color: grey;
+    font-size: 10px;
+
+}
+
+.form_text_ipt {
+    margin: 5px 0;
+}
+
 input {
     border: 1px solid black;
-    border-radius: 5%;
+}
+
+.error_image {
+    color: red;
+    margin-right: 5px;
+    width: 10px;
+    height: 10px;
+}
+
+.error_username {
+    text-align: center;
+}
+
+.error_password {
+    text-align: center;
 }

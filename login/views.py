@@ -9,7 +9,9 @@ def login(request):
         player_name = request.POST['username']
         password = request.POST['password']
         player = models.Player.objects.filter(username=player_name).first()
-        print('获取到信息')
+        # TODO: 检查
+        if player != None:
+            print('获取到信息')
         if player.username == player_name and player.password == password:
             print('登录成功')
             return HttpResponse('登录成功')

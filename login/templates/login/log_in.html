@@ -6,28 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
     <script src="../static/js/jquery-3.6.4.min.js"></script>
-    <script src="../static/js/script.js"></script>
+    <script src="../static/js/script_login.js"></script>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
     <div class="login_form">
         <div class="login_title">登录</div>
-        <form action="{% url 'login' %}" method="post"> {% csrf_token %}
+        <form class="login" action="{% url 'login' %}" method="post"> {% csrf_token %}
             <div class="form_text_ipt">
-                <input class="username" type="text" name="username" placeholder="用户名">
-                <span class="error_check err_username">用户名不能为空</span>
+                <div><input class="username" type="text" name="username" placeholder="用户名"></div>
+                <div class="error_info_username error_check"><img src="../static/images/x.png" alt="" class="error_image"><span class="error_username">用户名不能为空</span></div>
             </div>
             <div class="form_text_ipt">
-                <input class="password" type="password" name="password" placeholder="密码">
-                <span class="error_check err_password">密码不能为空</span>
-            </div>
-            <div class="form_check_ipt">
-                <div class="left check_left">
-                    <label><input type="checkbox" name=""> 下次自动登录</label>
-                </div>
-                <div class="right check_right">
-                    <a href="#">忘记密码</a>
-                </div>
+                <div><input class="password" type="password" name="password" placeholder="密码"></div>
+                <div class="error_info_password error_check"><img src="../static/images/x.png" alt="" class="error_image"><span class="error_password">密码不能为空</span></div>
             </div>
             <div class="form_btn">
                 <button type="submit">登录</button>
