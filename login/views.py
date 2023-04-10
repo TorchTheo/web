@@ -34,4 +34,4 @@ def logout(request):
     return HttpResponse("Logout successfully")
 
 def index(request):
-    return HttpResponse("Home page")
+    return render(request, 'login/index.html')
