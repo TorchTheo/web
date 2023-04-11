@@ -2,6 +2,8 @@ body {
     /* padding: 0;
     margin: 0; */
     font-size: 12px;
+    margin: 0;
+    font-family: "PingFang SC", "Microsoft Yahei", sans-serif;
 }
 
 a {
@@ -22,6 +24,7 @@ a {
 
 .form_text_ipt {
     margin: 5px 0;
+    text-align: left;
 }
 
 input {
@@ -40,5 +43,74 @@ input {
 }
 
 .error_password {
+    text-align: center;
+}
+
+.login_form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/background.jpg") fixed no-repeat;
+    background-size: cover;
+}
+
+.register_form {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/background.jpg") fixed no-repeat;
+    background-size: cover;
+}
+
+form {
+  width: 400px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+  background: inherit;
+  border-radius: 18px;
+  overflow: hidden; /* 隐藏多余的模糊效果*/
+}
+
+form::before {
+  content: "";
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  overflow: hidden;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.25);
+  filter: blur(6px);
+  z-index: -1;
+}
+
+form input,
+form button {
+  margin: 6px 0;
+  height: 36px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 0 14px;
+  color: #3d5245;
+}
+
+form h2 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #3d5245;
+}
+
+.login_form .form_text_ipt {
     text-align: center;
 }

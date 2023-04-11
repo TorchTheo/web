@@ -11,8 +11,8 @@
 </head>
 <body>
     <div class="register_form">
-        <div class="register_title">注册</div>
         <form class="register" action="{% url 'register' %}" method="post"> {% csrf_token %}
+            <h2 class="register_title">注册</h2>
             <div class="form_text_ipt">
                 <div><input class="username" type="text" name="username" placeholder="用户名"><span class="hint">用户名需由4-20个数字和字母组成</span></div>
                 <div class="error_info_username error_check"><img src="../static/images/x.png" alt="" class="error_image"><span class="error_username">用户名不能为空</span></div>
@@ -27,6 +27,7 @@
             </div>
             <div class="form_btn">
                 <button type="submit">注册</button>
+                <p style="color: red;">{{ existed_player }}</p>
             </div>
             <div class="form_reg_btn">
                 <span>已有账号？</span><a href="{% url 'login' %}">立刻登录</a>

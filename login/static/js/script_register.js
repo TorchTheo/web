@@ -1,4 +1,5 @@
 $(function() {
+    $(".error_check").hide()
     username_flag = false, password_flag = false, repassword_flag = false;
     username_check = /^[a-zA-Z0-9]{4,20}$/
     password_check = /^[a-zA-Z0-9]{8,16}$/
@@ -54,7 +55,27 @@ $(function() {
 
     $("form.register").submit(function(event) {
         if (password_flag == false || username_flag == false || repassword_flag == false) {
-            alert("不可提交")
+            if (username_flag == false) {
+                if ($("input.username").val() == '') {
+                    $("span.error_username").text("用户名不能为空");
+                    $("div.error_info_username").show();
+                } else if (!username_check.test($("input.username").val())) {
+                    $("span.error_username").text("用户名不符合规则");
+                    $("div.error_info_username").show();
+                }
+            }
+            if (password_flag == false) {
+                if ($("input.password").val() == '') {
+                    $("span.error_password").text("密码不能为空");
+                    $("div.error_info_password").show();
+                } else if (!password_check.test($("input.password").val())) {
+                    $("span.error_password").text("密码不符合规则");
+                    $("div.error_info_password").show();
+                }
+            }
+            if (repassword_flag == false) {
+                $("div.error_info_repassword").show();
+            }
             event.preventDefault();
         }
     });

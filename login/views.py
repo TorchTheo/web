@@ -10,14 +10,12 @@ def login(request):
         password = request.POST['password']
         player = models.Player.objects.filter(username=player_name).first()
         # TODO: 检查
-        if player != None:
-            print('获取到信息')
+        if player is None:
+            return render(request, 'login/log_in.html', {'error_message' : '用户不存在',})
         if player.username == player_name and player.password == password:
-            print('登录成功')
             return HttpResponse('登录成功')
         else:
-            print('登录失败')
-            return HttpResponse('登录失败')
+            return render(request, 'login/log_in.html', {'error_message' : '密码错误',})
     return render(request, 'login/log_in.html')
 
 def register(request):
@@ -27,9 +25,11 @@ def register(request):
         password = request.POST['password']
         repassword = request.POST['repassword']
         # TODO: 检验
+        if models.Player.objects.filter(username=player_name).first() != None:
+            return render(request, 'login/register.html', {'existed_player' : '用户名已被使用'})
         player = models.Player(username=player_name, password=password)
         player.save()
-        return HttpResponse('注册成功')
+        return render(request, 'login/register_successfully.html')
     return render(request, 'login/register.html')
 
 def logout(request):
@@ -37,3 +37,6 @@ def logout(request):
 
 def index(request):
     return render(request, 'login/index.html')
+
+def test(request):
+    return render(request, 'login/register_successfully.html')

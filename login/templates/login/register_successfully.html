@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册成功</title>
+    <style>
+        body {
+            background: url("../static/images/background.jpg") fixed no-repeat;
+        }
+        a {
+            color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <p>注册成功！<span id="sp">5</span>秒后自动跳转到登录页面...</p>
+    <a href="../login">手动跳转</a>
+    <script>
+        onload = function() {
+            setInterval(go, 1000)
+        };
+        var x = 4;
+        function go() {
+            if (x >= 0)
+                document.getElementById("sp").innerText = x;
+            else
+                location.href = "/login";
+            x--;
+        }
+    </script>
+</body>
+</html>
