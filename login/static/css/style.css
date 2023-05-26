@@ -52,7 +52,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("../images/background.jpg") fixed no-repeat;
+    background: url("../images/index_background.jpg") fixed no-repeat;
     background-size: cover;
 }
 
@@ -62,7 +62,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("../images/background.jpg") fixed no-repeat;
+    background: url("../images/index_background.jpg") fixed no-repeat;
     background-size: cover;
 }
 

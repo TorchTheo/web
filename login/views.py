@@ -13,7 +13,7 @@ def login(request):
         if player is None:
             return render(request, 'login/log_in.html', {'error_message' : '用户不存在',})
         if player.username == player_name and player.password == password:
-            return HttpResponse('登录成功')
+            return render(request, 'login/success.html')
         else:
             return render(request, 'login/log_in.html', {'error_message' : '密码错误',})
     return render(request, 'login/log_in.html')
@@ -40,3 +40,6 @@ def index(request):
 
 def test(request):
     return render(request, 'login/register_successfully.html')
+
+def success(request):
+    return render(request, 'login/successfully.html')

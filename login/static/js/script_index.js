@@ -12,11 +12,40 @@ landInTexts.forEach(landInText => {
 });
 
 
-$(function() {
-    $("span.login").click(function() {
-        location.href="login";
-    });
-    $("span.register").click(function() {
-        location.href="register";
-    });
+$(function () {
+  $("span.login").click(function () {
+    location.href = "login";
+  });
+  $("span.register").click(function () {
+    location.href = "register";
+  });
+  $("span.game1").click(function () {
+    $("#game1_info_overlay").show();
+  });
+  $(".cancel_button1").click(function () {
+    $("#game1_info_overlay").hide();
+  });
+  $(".enter_game1").click(function () {
+    location.href = "http://127.0.0.1:8001";
+  });
+
+  $("span.game2").click(function () {
+    $("#game2_info_overlay").show();
+  });
+  $(".cancel_button2").click(function () {
+    $("#game2_info_overlay").hide();
+  });
+  $(".enter_game2").click(function () {
+    location.href = "http://127.0.0.1:8002";
+  });
+
+  $("span.game3").click(function () {
+    $("#game3_info_overlay").show();
+  });
+  $(".cancel_button3").click(function () {
+    $("#game3_info_overlay").hide();
+  });
+  $(".enter_game3").click(function () {
+    location.href = "http://127.0.0.1:8003";
+  });
 })
